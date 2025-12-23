@@ -1,4 +1,4 @@
-const WEATHER_API_KEY = "YOUR_API_KEY";
+const WEATHER_API_KEY = "YOUR_API_KEY"; // Replace with your OpenWeather API key
 
 export async function getWeather(city) {
   try {
@@ -18,4 +18,3 @@ export async function getCrypto() {
   );
   return await res.json();
 }
-
