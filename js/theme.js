@@ -11,4 +11,3 @@ toggleBtn.addEventListener("click", () => {
   root.dataset.theme = newTheme;
   localStorage.setItem("theme", newTheme);
 });
-
