@@ -18,6 +18,7 @@ export async function renderCryptoChart() {
         data: prices,
         borderColor: "#4f46e5",
         tension: 0.3,
+        fill: false
       }]
     },
     options: {
@@ -30,4 +31,3 @@ export async function renderCryptoChart() {
     }
   });
 }
-
