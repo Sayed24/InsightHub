@@ -20,4 +20,3 @@ export function renderFavorites() {
     list.appendChild(li);
   });
 }
-
