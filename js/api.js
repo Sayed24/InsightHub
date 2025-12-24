@@ -3,7 +3,7 @@
    ========================= */
 
 // 🔑 Replace with your own OpenWeather API key
-const WEATHER_API_KEY = "YOUR_OPENWEATHER_API_KEY";
+const WEATHER_API_KEY = "ffa6785971f790f0d310af9923f0de7b";
 
 /* =========================
    WEATHER API
