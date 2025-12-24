@@ -5,6 +5,8 @@
 import { getWeather, getCryptoPrice } from "./api.js";
 import { saveFavorite, renderFavorites } from "./favorites.js";
 import { renderCryptoChart } from "./charts.js";
+import { loadNews } from "./news.js";
+loadNews();
 
 /* DOM ELEMENTS */
 const weatherOutput = document.getElementById("weather-data");
