@@ -1,33 +1,57 @@
+/* =========================
+   CRYPTO CHART (Chart.js)
+   ========================= */
+
 export async function renderCryptoChart() {
-  const res = await fetch(
-    "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7"
-  );
-  const data = await res.json();
+  try {
+    const response = await fetch(
+      "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7"
+    );
 
-  const prices = data.prices.map(p => p[1]);
-  const labels = data.prices.map((_, i) => `Day ${i + 1}`);
+    const data = await response.json();
 
-  const ctx = document.getElementById("cryptoChart");
+    const prices = data.prices.map(item => item[1]);
+    const labels = data.prices.map((_, index) => `Day ${index + 1}`);
 
-  new Chart(ctx, {
-    type: "line",
-    data: {
-      labels,
-      datasets: [{
-        label: "Bitcoin Price (USD)",
-        data: prices,
-        borderColor: "#4f46e5",
-        tension: 0.3,
-        fill: false
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          labels: { color: getComputedStyle(document.body).color }
+    const canvas = document.getElementById("cryptoChart");
+
+    new Chart(canvas, {
+      type: "line",
+      data: {
+        labels,
+        datasets: [
+          {
+            label: "Bitcoin Price (USD)",
+            data: prices,
+            borderColor: "#4f46e5",
+            backgroundColor: "rgba(79, 70, 229, 0.15)",
+            tension: 0.35,
+            fill: true
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            labels: {
+              color: getComputedStyle(document.body).color
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: getComputedStyle(document.body).color }
+          },
+          y: {
+            ticks: { color: getComputedStyle(document.body).color }
+          }
         }
       }
-    }
-  });
+    });
+
+  } catch (error) {
+    console.error("Chart error:", error);
+  }
 }
