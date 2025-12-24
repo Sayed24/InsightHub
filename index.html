@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>InsightHub</title>
 
+  <!-- Styles -->
   <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/styles.css" />
 
@@ -13,86 +14,102 @@
 </head>
 <body>
 
-<header class="header">
-  <div class="container header-content">
-    <h1 class="logo">InsightHub</h1>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-content">
 
-    <nav class="nav">
-      <a href="#hero">Home</a>
-      <a href="#dashboard">Dashboard</a>
-      <a href="#insights">Insights</a>
-      <a href="#about">About</a>
-    </nav>
+      <!-- LOGO (CLICKABLE → HOME) -->
+      <a href="#hero" class="logo">InsightHub</a>
 
-    <div class="header-actions">
-      <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-      <button id="menu-toggle" class="menu-btn">☰</button>
+      <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#insights">Insights</a>
+        <a href="#favorites">Favorites</a>
+        <a href="#about">About</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="menu-toggle" class="menu-btn" aria-label="Toggle Menu">☰</button>
+        <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+      </div>
+
     </div>
-  </div>
-</header>
+  </header>
 
-<section id="hero" class="hero">
-  <div class="container">
-    <h2>Your Real-Time Window Into the World</h2>
-    <p>Live weather, crypto data, and insights using public APIs.</p>
-    <a href="#dashboard" class="btn">Explore Dashboard</a>
-  </div>
-</section>
-
-<main class="container">
-
-  <section id="dashboard">
-    <h2>Live Dashboard</h2>
-
-    <div class="controls">
-      <input id="city-input" type="text" placeholder="Enter city..." />
-      <button id="search-btn">Search</button>
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <h1>Your Real-Time Window Into the World</h1>
+      <p>Live weather, crypto prices, and insights powered by public APIs.</p>
+      <a href="#dashboard" class="btn">Explore Dashboard</a>
     </div>
+  </section>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Weather</h3>
-        <p id="weather-data">No data</p>
+  <main class="container">
+
+    <!-- DASHBOARD -->
+    <section id="dashboard">
+      <h2>Live Dashboard</h2>
+
+      <div class="controls">
+        <input id="city-input" type="text" placeholder="Enter city name" />
+        <button id="search-btn">Search</button>
         <button id="save-favorite">⭐ Save</button>
       </div>
 
-      <div class="card">
-        <h3>Crypto</h3>
-        <p id="crypto-data">Loading...</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Weather</h3>
+          <p id="weather-data">No data</p>
+        </div>
+
+        <div class="card">
+          <h3>Crypto (Bitcoin)</h3>
+          <p id="crypto-data">No data</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="favorites">
-    <h2>Favorites</h2>
-    <ul id="favorites-list"></ul>
-  </section>
+    <!-- INSIGHTS -->
+    <section id="insights">
+      <h2>Crypto Insights (7 Days)</h2>
+      <div class="chart-container">
+        <canvas id="cryptoChart"></canvas>
+      </div>
+    </section>
 
-  <section id="insights">
-    <h2>Crypto Insights</h2>
-    <div class="chart-container">
-      <canvas id="cryptoChart"></canvas>
-    </div>
-  </section>
+    <!-- FAVORITES -->
+    <section id="favorites">
+      <h2>Favorites</h2>
+      <ul id="favorites-list"></ul>
+    </section>
 
-  <section id="about">
-    <h2>About This Project</h2>
-    <p>
-      InsightHub is a modern dashboard built with Vanilla JavaScript,
-      demonstrating API integration, UI theming, and responsive design.
-    </p>
-  </section>
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About This Project</h2>
+      <p>
+        InsightHub is a modern API-driven dashboard built with Vanilla JavaScript.
+        It demonstrates real-world async data handling, UI state management,
+        accessibility, and responsive design.
+      </p>
+    </section>
 
-</main>
+  </main>
 
-<footer class="footer">
-  <p>© 2025 Your Name · Vanilla JS</p>
-  <a href="https://github.com/yourusername/insighthub">GitHub</a>
-</footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 InsightHub · Vanilla JavaScript</p>
+    <a href="https://github.com/yourusername/insighthub" target="_blank">GitHub Repo</a>
+  </footer>
 
-<script src="js/theme.js"></script>
-<script src="js/nav.js"></script>
-<script type="module" src="js/main.js"></script>
+  <!-- SCRIPTS -->
+  <script type="module" src="js/theme.js"></script>
+  <script type="module" src="js/nav.js"></script>
+  <script type="module" src="js/api.js"></script>
+  <script type="module" src="js/favorites.js"></script>
+  <script type="module" src="js/charts.js"></script>
+  <script type="module" src="js/main.js"></script>
 
 </body>
 </html>
