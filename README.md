@@ -46,35 +46,6 @@ Designed as a **portfolio project** to demonstrate real-world frontend skills.
 
 ---
 
-## 📁 Project Structure
-/insighthub
-│
-├── index.html
-├── README.md
-│
-├── /css
-│   ├── theme.css
-│   └── styles.css
-│
-└── /js
-├── api.js
-├── charts.js
-├── favorites.js
-├── main.js
-├── nav.js
-├── news.js
-└── theme.js
----
-
-## 🔧 Setup
-
-1. Clone repository
-2. Open `index.html`
-3. Add your API keys inside `api.js`
-4. Deploy on GitHub Pages
-
----
-
 ## 👨‍💻 Author
 
 **Sayedrahim Sadat**  
